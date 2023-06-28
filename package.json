@@ -1,0 +1,25 @@
+{
+  "name": "refined-aneo-progessi",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.5.1",
+  "author": "Estéban Soubiran <pro.soubiran@gmail.cil>",
+  "license": "MIT",
+  "homepage": "https://github.com/barbapapazes/refined-aneo-progessi#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbapapazes/refined-aneo-progessi.git"
+  },
+  "bugs": "https://github.com/barbapapazes/refined-aneo-progessi/issues",
+  "scripts": {
+    "lint": "eslint .",
+    "release": "bumpp -x \"node bump.js\" --all"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.1",
+    "@types/node": "^18.16.13",
+    "bumpp": "^9.1.0",
+    "eslint": "^8.41.0"
+  }
+}
