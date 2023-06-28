@@ -2,11 +2,7 @@
 
 UserScript that enhances the Progessi of Aneo.
 
-[Install on Greasyfork](https://greasyfork.org/en/scripts/461320-refined-github-notifications)
-
-## Introduction
-
-Check [Anthony's Talk](https://youtu.be/gu-0b6KCf80) or the [Transcripts](https://antfu.me/posts/manage-github-notifcations-2023) to learn more about the philosophy and motivations behind this userscript.
+[Install on Greasyfork](https://greasyfork.org/fr/scripts/469655-refined-aneo-progessi)
 
 ## Features
 
