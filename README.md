@@ -1,6 +1,6 @@
-# Userscript: Refined GitHub Notifications
+# Userscript: Refined Aneo Progessi
 
-Enhances the GitHub Notifications page, making it more productive and less noisy.
+UserScript that enhances the Progessi of Aneo.
 
 [Install on Greasyfork](https://greasyfork.org/en/scripts/461320-refined-github-notifications)
 
