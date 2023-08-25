@@ -134,7 +134,7 @@
         for (let i = 1; i < lines.length; i++) {
           const cells = lines[i].split(',')
 
-          const lineName = cells[0] // First cell is line name
+          const lineName = cells[0].toLowerCase() // First cell is line name
           const data = {}
 
           // Start at 1 to skip line name
@@ -158,11 +158,11 @@
 
           const subLineSelect = timeline.querySelector('select + select')
 
-          let lineName = lineSelectName
+          let lineName = lineSelectName.toLowerCase()
 
           if (subLineSelect) {
             const subLineSelectName = subLineSelect.options[subLineSelect.selectedIndex].text
-            lineName += ` - ${subLineSelectName}`
+            lineName += ` - ${subLineSelectName.toLowerCase()}`
           }
 
           const days = timeline.querySelectorAll('.dayparent')
