@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Refined Aneo Progessi
 // @namespace    http://tampermonkey.net/
-// @version      0.0.2
+// @version      0.0.3
 // @description  UserScript that enhances the Progessi of Aneo
 // @author       Estéban Soubiran (https://github.com/barbapapazes)
 // @license      MIT
