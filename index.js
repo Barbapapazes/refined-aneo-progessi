@@ -150,8 +150,6 @@
           content.set(lineName, data)
         }
 
-        console.log(content)
-
         // Fill inputs
         timelines.forEach((timeline) => {
           const lineSelect = timeline.querySelector('select')
@@ -169,9 +167,13 @@
               csvKey = key
               return true
             }
+
+            return false
           })
 
-          if (!csvKey) { console.warn('No key found for line name', lineName) }
+          if (!csvKey) {
+            console.warn('No key found for line name', lineName)
+          }
           else {
             const csvContent = content.get(csvKey)
             days.forEach((day) => {
