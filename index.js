@@ -117,8 +117,6 @@
     // on /home/control/timesheetByLine
     const input = createImportCSVInput()
 
-    const timelines = document.querySelectorAll('div.fc-timeline')
-
     input.addEventListener('change', (e) => {
       const file = e.target.files[0]
 
@@ -149,6 +147,8 @@
 
           content.set(lineName, data)
         }
+
+        const timelines = document.querySelectorAll('div.fc-timeline')
 
         // Fill inputs
         timelines.forEach((timeline) => {
@@ -202,7 +202,8 @@
     })
 
     // Add input after the first button in actions
-    const action = document.querySelector('#content-main-section > div.ng-scope > div > div > form > div:nth-child(6) > button')
+    const actions = document.querySelectorAll('.fc-addcontrol')
+    const action = actions[1].querySelector('button')
     action.after(input)
   }
 
