@@ -154,12 +154,21 @@
         timelines.forEach((timeline) => {
           const lineSelect = timeline.querySelector('select')
           // const lineValue = lineSelect.options[lineSelect.selectedIndex].value
-          const lineName = lineSelect.options[lineSelect.selectedIndex].text
+          const lineSelectName = lineSelect.options[lineSelect.selectedIndex].text
+
+          const subLineSelect = timeline.querySelector('select + select')
+
+          let lineName = lineSelectName
+
+          if (subLineSelect) {
+            const subLineSelectName = subLineSelect.options[subLineSelect.selectedIndex].text
+            lineName += ` - ${subLineSelectName}`
+          }
 
           const days = timeline.querySelectorAll('.dayparent')
 
           // Line name could be a part of the content key
-          const contentKeys = content.keys()
+          const contentKeys = Array.from(content.keys())
           let csvKey = ''
 
           contentKeys.find((key) => {
