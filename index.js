@@ -101,7 +101,103 @@
     clearInterval(waitingLoading)
   }
 
+  function createImportCSVInput() {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.id = 'file'
+    input.accept = '.csv'
+    input.title = 'Importer un fichier CSV'
+
+    input.classList.add('btn', 'btn-primary', 'btn-sm')
+
+    return input
+  }
+
+  function addImportCSV() {
+    // on /home/control/timesheetByLine
+    const input = createImportCSVInput()
+
+    const timelines = document.querySelectorAll('div.fc-timeline')
+
+    input.addEventListener('change', (e) => {
+      const file = e.target.files[0]
+
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        const lines = e.target.result.split('\n')
+
+        const header = lines[0].split(',')
+
+        // Parse CSV
+
+        const content = new Map() // Key is line name and value is an object with day as key and time as value
+
+        // Start at 1 to skip header
+        for (let i = 1; i < lines.length; i++) {
+          const cells = lines[i].split(',')
+
+          const lineName = cells[0] // First cell is line name
+          const data = {}
+
+          // Start at 1 to skip line name
+          for (let j = 1; j < cells.length; j++) {
+            const day = header[j]
+            const time = cells[j]
+
+            data[day] = time
+          }
+
+          content.set(lineName, data)
+        }
+
+        console.log(content)
+
+        // Fill inputs
+        timelines.forEach((timeline) => {
+          const lineSelect = timeline.querySelector('select')
+          // const lineValue = lineSelect.options[lineSelect.selectedIndex].value
+          const lineName = lineSelect.options[lineSelect.selectedIndex].text
+
+          const days = timeline.querySelectorAll('.dayparent')
+
+          // Line name could be a part of the content key
+          const contentKeys = content.keys()
+          let csvKey = ''
+
+          contentKeys.find((key) => {
+            if (lineName.includes(key)) {
+              csvKey = key
+              return true
+            }
+          })
+
+          if (!csvKey) { console.warn('No key found for line name', lineName) }
+          else {
+            const csvContent = content.get(csvKey)
+            days.forEach((day) => {
+              const dayName = day.querySelector('.day-numbers').textContent
+              const dayInput = day.querySelector('input')
+
+              const dayValue = csvContent[dayName]
+              if (dayValue)
+                dayInput.value = dayValue
+            })
+          }
+        })
+
+        input.value = ''
+      }
+
+      reader.readAsText(file)
+    })
+
+    // Add input after the first button in actions
+    const action = document.querySelector('#content-main-section > div.ng-scope > div > div > form > div:nth-child(6) > button')
+    action.after(input)
+  }
+
   waitingLoading = setTimeout(() => {
     hideUselessData()
+    addImportCSV()
   }, 50)
 })()
