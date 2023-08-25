@@ -179,10 +179,18 @@
             days.forEach((day) => {
               const dayName = day.querySelector('.day-numbers').textContent
               const dayInput = day.querySelector('input')
+              const spanValue = day.querySelector('input + span')
 
               const dayValue = csvContent[dayName]
-              if (dayValue)
-                dayInput.value = dayValue
+              if (dayValue) {
+                dayInput.title = dayValue / 100
+                dayInput.value = dayValue / 100
+                spanValue.textContent = dayValue / 100
+
+                // trigger change event
+                const event = new Event('change')
+                dayInput.dispatchEvent(event)
+              }
             })
           }
         })
