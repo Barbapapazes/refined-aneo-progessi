@@ -17,9 +17,9 @@
     "release": "bumpp -x \"node bump.js\" --all"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.6",
+    "@antfu/eslint-config": "^0.43.1",
     "@types/node": "^18.16.18",
     "bumpp": "^9.1.1",
-    "eslint": "^8.43.0"
+    "eslint": "^8.57.1"
   }
 }
