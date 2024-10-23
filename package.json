@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.6",
-    "@types/node": "^18.16.18",
-    "bumpp": "^9.1.1",
+    "@types/node": "^18.19.59",
+    "bumpp": "^9.7.1",
     "eslint": "^8.43.0"
   }
 }
