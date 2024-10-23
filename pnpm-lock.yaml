@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^0.39.6
     version: 0.39.6(eslint@8.43.0)(typescript@5.1.5)
   '@types/node':
-    specifier: ^18.16.18
-    version: 18.16.18
+    specifier: ^20.17.0
+    version: 20.17.0
   bumpp:
     specifier: ^9.1.1
     version: 9.1.1
@@ -240,8 +240,10 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/node@18.16.18:
-    resolution: {integrity: sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==}
+  /@types/node@20.17.0:
+    resolution: {integrity: sha512-a7zRo0f0eLo9K5X9Wp5cAqTUNGzuFLDG2R7C4HY2BhcMAsxgSPuRvAC1ZB6QkuUQXf0YZAgfOX2ZyrBa2n4nHQ==}
+    dependencies:
+      undici-types: 6.19.8
     dev: true
 
   /@types/normalize-package-data@2.4.1:
@@ -880,7 +882,7 @@ packages:
     dependencies:
       debug: 3.2.7
       is-core-module: 2.12.1
-      resolve: 1.22.2
+      resolve: 1.22.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1951,7 +1953,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.2
+      resolve: 1.22.3
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: true
@@ -2498,6 +2500,10 @@ packages:
       has-bigints: 1.0.2
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
+    dev: true
+
+  /undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
     dev: true
 
   /unist-util-stringify-position@2.0.3:
